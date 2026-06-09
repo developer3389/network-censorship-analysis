@@ -95,6 +95,9 @@ A censor may attempt to cut off the global internet and transition the country t
 It is logical to conclude that when the cost of bypassing a nation’s digital defenses is reduced to a mere 200 lines of Go code, the verdict is clear: the current censorship infrastructure is obsolete.  
 To the censors: your efforts are futile. The only recommendation that will actually assist you in preventing further damage to the national infrastructure is to resign from this unsustainable and unproductive line of work. A thriving and advanced digital economy requires one essential condition: unrestricted information exchange with the entire world.
 
-## Let's Reclaim Internet Freedom!
-Use this project:
+## Implementation Reference
+The theoretical concepts discussed in this analysis are reflected in our experimental tunneling prototype.  
+You can explore the practical implementation here:  
 https://github.com/developer3389/simplest-vpn
+
+**Let's Reclaim Internet Freedom!**
