@@ -5,7 +5,13 @@
 > It serves to highlight the risks that any nation employing these systems may encounter.  
 > The author has not verified and had no opportunity to verify this material for compliance with the legislative specifics of every country in the world.
 
-We’re seeing a global surge in invasive, DPI-based censorship. Whether it's mandatory passport-based identity checks or hunting down VPNs, the censorship agency's approach is becoming a global playbook. But once the censorship agency pushes too hard, the logical move for users is to go for user-defined VPNs. And that’s where things get interesting.  
+We’re seeing a global surge in invasive, DPI-based censorship. Whether it's mandatory passport-based identity checks or hunting down VPNs, the censorship agency's approach is becoming a global playbook. But once the censorship agency pushes too hard, the logical move for users is to go for user-defined VPNs. And that’s where things get interesting.
+
+## Implementation Reference
+> [!NOTE]
+> The theoretical concepts discussed in this analysis are reflected in our experimental tunneling prototype.  
+> You can explore the practical implementation here:  
+https://github.com/developer3389/simplest-vpn
 
 #### The User's Asymmetric Advantage
 When users control the code, they own the bypass. They can tweak their own handshakes, inject custom jitter, or even program specific traffic patterns on the fly. Unlike commercial VPNs that have to play by network rules, individual users have zero constraints.
@@ -95,9 +101,4 @@ A censor may attempt to cut off the global internet and transition the country t
 It is logical to conclude that when the cost of bypassing a nation’s digital defenses is reduced to a mere 200 lines of Go code, the verdict is clear: the current censorship infrastructure is obsolete.  
 To the censors: your efforts are futile. The only recommendation that will actually assist you in preventing further damage to the national infrastructure is to resign from this unsustainable and unproductive line of work. A thriving and advanced digital economy requires one essential condition: unrestricted information exchange with the entire world.
 
-## Implementation Reference
-The theoretical concepts discussed in this analysis are reflected in our experimental tunneling prototype.  
-You can explore the practical implementation here:  
-https://github.com/developer3389/simplest-vpn
-
-**Let's Reclaim Internet Freedom!**
+## Let's Reclaim Internet Freedom!
