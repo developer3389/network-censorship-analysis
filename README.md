@@ -96,3 +96,5 @@ It is logical to conclude that when the cost of bypassing a nation’s digital d
 To the censors: your efforts are futile. The only recommendation that will actually assist you in preventing further damage to the national infrastructure is to resign from this unsustainable and unproductive line of work. A thriving and advanced digital economy requires one essential condition: unrestricted information exchange with the entire world.
 
 ## Let's Reclaim Internet Freedom!
+Use this project:
+https://github.com/developer3389/simplest-vpn
