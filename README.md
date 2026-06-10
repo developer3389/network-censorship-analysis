@@ -9,9 +9,8 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 
 ## Implementation Reference
 > [!NOTE]
-> The theoretical concepts discussed in this analysis are reflected in our experimental tunneling prototype.  
-> You can explore the practical implementation here:  
-https://github.com/developer3389/simplest-vpn
+> The theory is backed by a minimalist approach. You can explore the practical implementation here:  
+> You can explore the practical implementation here: [simplest-vpn: 200-line skeleton](https://github.com/developer3389/simplest-vpn)
 
 #### The User's Asymmetric Advantage
 When users control the code, they own the bypass. They can tweak their own handshakes, inject custom jitter, or even program specific traffic patterns on the fly. Unlike commercial VPNs that have to play by network rules, individual users have zero constraints.
