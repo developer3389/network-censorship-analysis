@@ -9,7 +9,7 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 
 ## Implementation Reference
 > [!NOTE]
-> The theory is backed by a minimalist approach. You can explore the practical implementation here:  
+> The theory is backed by a minimalist approach.  
 > You can explore the practical implementation here: [simplest-vpn: 200-line skeleton](https://github.com/developer3389/simplest-vpn)
 
 #### The User's Asymmetric Advantage
