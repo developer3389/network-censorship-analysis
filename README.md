@@ -53,7 +53,7 @@ The censor can send requests to the users' servers to check how they will behave
 This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. By mimicking the transfer of such data, the VPN tunnel camouflages itself as a standard business-grade process, such as database synchronization or private cloud storage traffic—mimicking the protocol behavior rather than specific vendor infrastructure. Because high-volume data transfers and binary streams are essential for legitimate business operations, blocking them indiscriminately would trigger severe collateral damage to the national economy.
 
 > [!WARNING]  
-> Users should avoid using hardcoded SNI strings like `googledrive.com on a cheap VPS`  
+> Users should avoid using hardcoded SNI strings like `googledrive.com` on a cheap VPS.  
 > This is a transparent spoofing attempt that immediately reveals the proxy nature of the connection.
 
 > [!NOTE]
