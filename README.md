@@ -48,7 +48,7 @@ OUTPUT DROP
 Only essential traffic (the encrypted tunnel to VPS1) should be explicitly allowed. All other devices in the local network should have this specific VPN gateway hardcoded in their network settings, ensuring that no traffic can bypass the tunnel or reach the internet via the default ISP gateway.
 
 #### Countering Active Probing: Strategies for Server Hiding
-The censor can send requests to your server to check how it will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
+The censor can send requests to the users' servers to check how they will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
 
 This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. By mimicking the transfer of such data, the VPN tunnel camouflages itself as a standard business-grade process, such as database synchronization or cloud storage activity. Because high-volume data transfers and binary streams are essential for legitimate business operations, blocking them indiscriminately would trigger severe collateral damage to the national economy.
 
