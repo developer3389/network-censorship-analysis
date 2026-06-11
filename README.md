@@ -50,7 +50,13 @@ Only essential traffic (the encrypted tunnel to VPS1) should be explicitly allow
 #### Countering Active Probing: Strategies for Server Hiding
 The censor can send requests to the users' servers to check how they will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
 
-This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. By mimicking the transfer of such data, the VPN tunnel camouflages itself as a standard business-grade process, such as database synchronization or private cloud storage traffic—mimicking the protocol behavior rather than specific vendor infrastructure. Because high-volume data transfers and binary streams are essential for legitimate business operations, blocking them indiscriminately would trigger severe collateral damage to the national economy.
+This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. By mimicking the transfer of such data, the VPN tunnel camouflages itself as a standard business-grade process, such as database synchronization or private cloud storage traffic—mimicking the protocol behavior rather than specific vendor infrastructure.
+
+> [!WARNING]  
+> Users should avoid using hardcoded SNI strings like `googledrive.com on a cheap VPS`  
+> This is a transparent spoofing attempt that immediately reveals the proxy nature of the connection.
+
+Because high-volume data transfers and binary streams are essential for legitimate business operations, blocking them indiscriminately would trigger severe collateral damage to the national economy.
 
 > [!NOTE]
 > It is important to note that users do not need to achieve perfect protocol imitation; it is sufficient to introduce enough uncertainty to force the censor to treat every legitimate connection in the country as potentially suspicious, effectively paralyzing the filtering infrastructure under the weight of its own paranoia.
