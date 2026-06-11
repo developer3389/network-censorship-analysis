@@ -47,6 +47,13 @@ OUTPUT DROP
 
 Only essential traffic (the encrypted tunnel to VPS1) should be explicitly allowed. All other devices in the local network should have this specific VPN gateway hardcoded in their network settings, ensuring that no traffic can bypass the tunnel or reach the internet via the default ISP gateway.
 
+#### Countering Active Probing: Strategies for Server Hiding
+The censor can send requests to your server to check how it will behave.
+If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server.
+In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
+This could be an HTTP response, text, an image, a video stream, a stream of documents, or files.
+Users have a unique opportunity to employ asymmetric strategies to outsmart the censor.
+
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
 
