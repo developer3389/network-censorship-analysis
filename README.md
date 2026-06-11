@@ -54,7 +54,7 @@ This could be an HTTP response, text, an image, a video stream, or a stream of s
 
 > [!WARNING]  
 > Users should avoid using hardcoded SNI strings like `googledrive.com` on a cheap VPS.  
-> This is a transparent spoofing attempt that immediately reveals the proxy nature of the connection.
+> This is an obvious spoofing attempt that immediately reveals the proxy nature of the connection.
 
 > [!NOTE]
 > It is important to note that users do not need to achieve perfect protocol imitation; it is sufficient to introduce enough uncertainty to force the censor to treat every legitimate connection in the country as potentially suspicious, effectively paralyzing the filtering infrastructure under the weight of its own paranoia.
