@@ -52,6 +52,9 @@ The censor can send requests to the users' servers to check how they will behave
 
 This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. By mimicking the transfer of such data, the VPN tunnel camouflages itself as a standard business-grade process, such as database synchronization or private cloud storage traffic—mimicking the protocol behavior rather than specific vendor infrastructure. Because high-volume data transfers and binary streams are essential for legitimate business operations, blocking them indiscriminately would trigger severe collateral damage to the national economy.
 
+> [!NOTE]
+> It is important to note that users do not need to achieve perfect protocol imitation; it is sufficient to introduce enough uncertainty to force the censor to treat every legitimate connection in the country as potentially suspicious, effectively paralyzing the filtering infrastructure under the weight of its own paranoia.
+
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
 
