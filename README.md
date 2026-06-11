@@ -58,7 +58,7 @@ This could be an HTTP response, text, an image, a video stream, or a stream of s
 
 > [!WARNING]
 > **Warning to Censors:**
-> Users are not required to achieve perfect protocol imitation. It is sufficient to introduce a baseline level of uncertainty that forces the system to flag every legitimate connection as potentially suspicious—effectively paralyzing the filtering infrastructure under the weight of its own paranoia.
+> Users are not required to achieve perfect protocol imitation. It is sufficient to introduce a baseline level of uncertainty that forces the system to flag every legitimate connection as potentially suspicious—effectively paralyzing the nation’s infrastructure under the weight of its own paranoia.
 
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
