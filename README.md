@@ -37,15 +37,10 @@ Standard practices currently used in those regions do not provide users with ade
 However, there is a robust, fail-safe method:
 `[Client in censorship country] -> [VPS1 (Abroad)] -> [VPS2 (Abroad)]`  
 
-The core concept of this method is that smartphone applications will only detect the IP address of VPS2. Even if the censor identifies and blocks VPS2, the connection to the foreign network is maintained via the IP address of VPS1. The censor cannot see or block VPS1, provided that the VPN gateway (192.168.0.x) resides on a device or virtual machine that is dedicated exclusively to this task and used for nothing else. 
-To prevent DNS leaks and other types of traffic leaks, the gateway must be configured with a strict "default deny" policy. The firewall (iptables/nftables) must be set to:
-```
-INPUT DROP
-FORWARD DROP
-OUTPUT DROP
-```
+The core concept of this method is that smartphone applications will only detect the IP address of VPS2. Even if the censor identifies and blocks VPS2, the connection to the foreign network is maintained via the IP address of VPS1. The censor cannot see or block VPS1, provided that the VPN gateway resides on a device or virtual machine that is dedicated exclusively to this task and used for nothing else.
 
-Only essential traffic (the encrypted tunnel to VPS1) should be explicitly allowed. All other devices in the local network should have this specific VPN gateway hardcoded in their network settings, ensuring that no traffic can bypass the tunnel or reach the internet via the default ISP gateway.
+> [!TIP]
+You can read [**our guide**](https://github.com/developer3389/vpn-gateway) how to setup vpn-gateway for entire home network.
 
 #### Countering Active Probing: Strategies for Server Hiding
 The censor can send requests to the users' servers to check how they will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
