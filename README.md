@@ -45,15 +45,15 @@ You can read [**our guide**](https://github.com/developer3389/vpn-gateway) how t
 #### Countering Active Probing: Strategies for Server Hiding
 The censor can send requests to the users' servers to check how they will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
 
-This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. By mimicking the transfer of such data, the VPN tunnel camouflages itself as a standard business-grade process, such as database synchronization or private cloud storage traffic—mimicking the protocol behavior rather than specific vendor infrastructure. Because high-volume data transfers and binary streams are essential for legitimate business operations, blocking them indiscriminately would trigger severe collateral damage to the national economy.
+This could be an HTTP response, text, an image, a video stream, or a stream of structured data files such as database dumps or binary blobs. The VPN tunnel disguises its traffic as routine business activity, such as database synchronization or cloud storage. Instead of spoofing a specific service via `SNI`, it mimics the general behavior of standard enterprise protocols.
 
 > [!WARNING]  
 > Users should avoid using hardcoded SNI strings like `googledrive.com` on a cheap VPS.  
-> This is an obvious spoofing attempt that immediately reveals the proxy nature of the connection.
+> This is an obvious spoofing attempt that immediately reveals the proxy nature of the connection, as Google does not host its services on $1 VPS instances.
 
 > [!WARNING]
 > **Warning to Censors:**
-> Users are not required to achieve perfect protocol imitation. It is sufficient to introduce a baseline level of uncertainty that forces the system to flag every legitimate connection as potentially suspicious—effectively paralyzing the nation’s infrastructure under the weight of its own paranoia.
+> Users do not need perfect protocol imitation. The sheer scale of such obfuscation will force the system to flag legitimate connections as hidden VPN tunnels. Eventually, the censor will begin blocking actual business traffic, effectively paralyzing the nation’s infrastructure.
 
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
@@ -103,6 +103,9 @@ Can individual users be blamed for this situation? Hardly, as each creates a loa
 
 #### The Nuclear Option: White-listing and Total Isolation
 A censor may attempt to cut off the global internet and transition the country to a "white-list" system, leaving only a state-run intranet. However, for patriots who sincerely care about the well-being of the country's constitutional order, it is crucial to advise their leader against implementing such measures: the economic collapse and social backlash triggered by isolation will only serve as the fastest path to destabilization. Furthermore, those promoting the concept of white-listing are, from the perspective of economists, inadvertently undermining the constitutional order and the nation's stability.
+
+#### What if Whitelists are Enforced?
+If a regime reaches the point of implementing a nationwide whitelist, citizens should simply grab some popcorn. When a country becomes so intellectually and technologically bankrupt that it chooses complete digital isolation, it has already sealed its own fate. The ensuing systemic collapse will be entirely self-inflicted, driven by the regime’s own incompetence.
 
 #### The Final Statement
 It is logical to conclude that when the cost of bypassing a nation’s digital defenses is reduced to a mere 200 lines of Go code, the verdict is clear: the current censorship infrastructure is obsolete.  
