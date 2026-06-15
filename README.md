@@ -7,6 +7,20 @@
 
 We’re seeing a global surge in invasive, DPI-based censorship. Whether it's mandatory passport-based identity checks or hunting down VPNs, the censorship agency's approach is becoming a global playbook. But once the censorship agency pushes too hard, the logical move for users is to go for user-defined VPNs. And that’s where things get interesting.
 
+## Table of Contents
+1. [Implementation Reference](#implementation-reference)
+2. [The User's Asymmetric Advantage](#the-users-asymmetric-advantage)
+3. [What about non-technical users?](#what-about-non-technical-users)
+4. [Breaking the Censor’s Workflow](#breaking-the-censors-workflow)
+5. [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
+6. [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
+7. [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
+8. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
+9. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
+10. [The Final Statement](#the-final-statement)
+
+---
+
 ## Implementation Reference
 > [!NOTE]
 > The theory is backed by a minimalist approach.  
