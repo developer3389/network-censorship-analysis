@@ -16,7 +16,7 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 6. [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
 7. [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
 8. [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
-9. [The Failure of L3 Routing](#the-failure-of-l3-routing)
+9. [The Failure of L3 Routing: The Split-Tunneling Trap](#the-failure-of-l3-routing-the-split-tunneling-trap)
 10. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
 11. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
 12. [The Final Statement](#the-final-statement)
@@ -127,7 +127,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 
 Thus, by combining this architecture with custom user-defined protocols, criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
 
-#### The Failure of L3 Routing
+#### The Failure of L3 Routing: The Split-Tunneling Trap
 Current split-tunneling methods, which route traffic based on network-level IP addresses or domain zones, are fundamentally flawed.
 
 The modern internet is global, and websites frequently load content from dozens of servers worldwide. When poorly configured tunnel settings force a site’s traffic to split between an encrypted tunnel and a direct connection at the network level (L3), it causes "split-brain" errors: the server sees the same user arriving from multiple locations simultaneously, leading to session errors and blocked access.
