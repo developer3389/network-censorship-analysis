@@ -153,7 +153,7 @@ The core problem with current tools is the friction of constant VPN toggling. To
 > **Priority Rule:** A more specific domain mask always overrides a general one.  
 > For instance, if a user visits `gemini.google.com`, the browser will prioritize the explicit `gemini.google.com` rule (Proxy D) over the broader `*.google.com` rule (Proxy C).
 
-To manage traffic with surgical precision, users define routing rules based on domain masks. The system follows a hierarchical logic where more specific masks take precedence over general ones.
+**This is our core vision**: users define traffic routing through domain masks, applying a hierarchical logic where precision dictates the path. By mapping specific masks to proxy instances, we transform browser architecture from a "global-on/off" model to a granular, context-aware routing system:
 
 - Tab-to-Proxy Binding by Domain Mask: Users define domain masks (e.g., `*.youtube.com`) and assign them to specific proxy instances. The browser then binds the entire context of a tab to the appropriate proxy based on the domain in the address bar.
 
