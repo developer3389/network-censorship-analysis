@@ -132,10 +132,10 @@ Current split-tunneling methods, which route traffic based on network-level IP a
 
 The modern internet is global, and websites frequently load content from dozens of servers worldwide. When poorly configured tunnel settings force a site’s traffic to split between an encrypted tunnel and a direct connection at the network level (L3), it causes "split-brain" errors: the server sees the same user arriving from multiple locations simultaneously, leading to session errors and blocked access.
 
+**We propose a new standard for browser architecture:**
+
 The L7 Solution: Contextual Browser Routing
 The core problem with current tools is the friction of constant VPN toggling. To restore a seamless experience, we must shift traffic management to the application layer (L7) by binding browser tab contexts to specific proxy-based tunnels.
-
-**We propose a new standard for browser architecture:**
 
 ##### Practical Implementation: Hierarchical Proxy Mapping
 **Example Configuration:**
