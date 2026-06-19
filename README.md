@@ -16,9 +16,10 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 6. [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
 7. [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
 8. [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
-9. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
-10. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
-11. [The Final Statement](#the-final-statement)
+9. [The Failure of L3 Routing](#the-failure-of-l3-routing)
+10. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
+11. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
+12. [The Final Statement](#the-final-statement)
 
 ---
 
@@ -125,6 +126,39 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > In this scenario, the `VPN CLIENT` acts as a "passive receiver," making no suspicious outgoing requests.
 
 Thus, by combining this architecture with custom user-defined protocols, criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
+
+#### The Failure of L3 Routing
+Current split-tunneling methods, which route traffic based on network-level IP addresses or domain zones, are fundamentally flawed.
+
+The modern internet is global, and websites frequently load content from dozens of servers worldwide. When poorly configured tunnel settings force a site’s traffic to split between an encrypted tunnel and a direct connection at the network level (L3), it causes "split-brain" errors: the server sees the same user arriving from multiple locations simultaneously, leading to session errors and blocked access.
+
+The L7 Solution: Contextual Browser Routing
+The core problem with current tools is the friction of constant VPN toggling. To restore a seamless experience, we must shift traffic management to the application layer (L7) by binding browser tab contexts to specific proxy-based tunnels.
+
+**We propose a new standard for browser architecture:**
+
+##### Practical Implementation: Hierarchical Proxy Mapping
+**Example Configuration:**
+
+| Tab | Address Bar Domain | Rule (Mask) | Proxy Instance |
+| :--- | :--- | :--- | :--- |
+| 1, 2, 3 | `music.youtube.com` | `*.youtube.com` | `127.0.0.1:8080` (Proxy A) |
+| 4 | `speedtest.net` | `*.net` | `127.0.0.1:8081` (Proxy B) |
+| 5 | `mail.google.com` | `*.google.com` | `127.0.0.1:8082` (Proxy C) |
+| 6 | `gemini.google.com` | `gemini.google.com` | `127.0.0.1:8083` (Proxy D) |
+| 7 | `any-site.com` | `*` | `127.0.0.1:8084` (Proxy E) |
+
+To manage traffic with surgical precision, users define routing rules based on domain masks. The system follows a hierarchical logic where more specific masks take precedence over general ones.
+
+- Tab-to-Proxy Binding by Domain Mask: Users define domain masks (e.g., *.youtube.com) and assign them to specific proxy instances. The browser then binds the entire context of a tab to the appropriate proxy based on the domain in the address bar.
+
+- Full Context Encapsulation: Once a tab is bound to a proxy via its domain, every request initiated within that tab—including all background scripts, API calls, and third-party trackers—is forced through that specific tunnel.
+
+- Seamless Navigation: This approach eliminates the need for manual VPN toggling. Users simply open a tab, and the browser automatically routes the session based on the domain in the address bar. The connection state is maintained automatically, ensuring a smooth, uninterrupted browsing experience.
+
+- Isolation: Because the tunnel is bound to the tab’s context, site data never leaks outside the designated path, ensuring a consistent digital presence without the errors caused by fragmented routing.
+
+As internet censorship spreads, managing traffic with this level of surgical precision is the only way to keep the web accessible and stable, while reclaiming the comfort of a truly global internet.
 
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
