@@ -15,9 +15,10 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 5. [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
 6. [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
 7. [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
-8. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
-9. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
-10. [The Final Statement](#the-final-statement)
+8. [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
+9. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
+10. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
+11. [The Final Statement](#the-final-statement)
 
 ---
 
@@ -68,6 +69,59 @@ This could be an HTTP response, text, an image, a video stream, or a stream of s
 > [!WARNING]
 > **Warning to Censors:**
 > Users do not need perfect protocol imitation. The sheer scale of such obfuscation will force the system to flag legitimate connections as hidden VPN tunnels. Eventually, the censor will begin blocking actual business traffic, effectively paralyzing the nation’s infrastructure.
+
+#### Why Criminal Prosecution is a Sign of Technical Impotence
+Introducing criminal liability for VPN usage is not a display of power, but an admission of technical failure. If DPI (Deep Packet Inspection) systems were capable of effectively and accurately identifying VPN traffic, the state would block it automatically without resorting to social intimidation.
+
+Technically, it is impossible to prove the use of a VPN if the protocol itself cannot be detected. Let us consider the examples.
+
+Traditional VPNs are easily detectable targets due to their predictable symmetry: a single socket, a fixed pair of IP addresses, and a mirrored data stream:
+
+```bash
+[VPN CLIENT IP1] ------------------------> [VPN SERVER IP2]
+                         (Request)
+
+[VPN CLIENT IP1] <------------------------ [VPN SERVER IP2]
+                         (Response)
+```
+
+To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangular" topology. This separates data streams across independent sockets and IP addresses:
+
+##### Triangular Topology:
+
+```bash
+               (Socket 1)
+[CLIENT IP 1] ----------> [VPN SERVER IP 2]
+
+               (Socket 2)
+[CLIENT IP 1] <---------- [VPN SERVER IP 3]
+```
+* *Sockets `(IP 1, IP 2)` and `(IP 1, IP 3)` are independent.*
+* *The censor cannot correlate outgoing requests with incoming responses.*
+
+##### Rectangular Topology:
+```bash
+                        (Socket 1)     
+[VPN CLIENT IP 1]  -------------------> [VPN SERVER IP 2]
+       ^                                           |
+       |                                           | 
+       | (Socket 4)                                | (Socket 2)
+       |                                           |
+	   |                                           v
+[TRANSIT VPS IP 4] <------------------- [TRANSIT VPS IP 3]
+                        (Socket 3)      
+```
+
+* *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3)`, `(IP 3, IP 4)` and `(IP 3, IP 4)` are independent.*
+
+> [!NOTE]
+> To eliminate stream correlation, receive and transmit sockets must operate with distinct rhythms, amplitudes, and intensities.
+
+> [!NOTE]
+> Also, note that in these schemes, the connection can be initiated not only by the client within the country of censorship but also by external nodes (`VPN SERVER` or `TRANSIT VPS`), directing traffic inward.  
+> In this scenario, the `VPN CLIENT` acts as a "passive receiver," making no suspicious outgoing requests.
+
+Thus, by combining this architecture with custom user-defined protocols, criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
 
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
