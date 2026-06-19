@@ -92,11 +92,14 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 ```bash
                (Socket 1)
 [CLIENT IP 1] ----------> [VPN SERVER IP 2]
-
-               (Socket 2)
-[CLIENT IP 1] <---------- [VPN SERVER IP 3]
+                                  |
+								  | (Socket 2)
+                                  |
+                                  v
+[CLIENT IP 1] <---------- [TRANSIT VPS IP 3]
+               (Socket 3)
 ```
-* *Sockets `(IP 1, IP 2)` and `(IP 1, IP 3)` are independent.*
+* *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3) and (IP 3, IP 1)` are independent.*
 * *The censor cannot correlate outgoing requests with incoming responses.*
 
 ##### Rectangular Topology:
@@ -112,7 +115,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
                         (Socket 3)      
 ```
 
-* *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3)`, `(IP 3, IP 4)` and `(IP 3, IP 4)` are independent.*
+* *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3)`, `(IP 3, IP 4)` and `(IP 4, IP 1)` are independent.*
 
 > [!NOTE]
 > To eliminate stream correlation, receive and transmit sockets must operate with distinct rhythms, amplitudes, and intensities.
