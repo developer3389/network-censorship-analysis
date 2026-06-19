@@ -155,7 +155,7 @@ The core problem with current tools is the friction of constant VPN toggling. To
 
 To manage traffic with surgical precision, users define routing rules based on domain masks. The system follows a hierarchical logic where more specific masks take precedence over general ones.
 
-- Tab-to-Proxy Binding by Domain Mask: Users define domain masks (e.g., *.youtube.com) and assign them to specific proxy instances. The browser then binds the entire context of a tab to the appropriate proxy based on the domain in the address bar.
+- Tab-to-Proxy Binding by Domain Mask: Users define domain masks (e.g., `*.youtube.com`) and assign them to specific proxy instances. The browser then binds the entire context of a tab to the appropriate proxy based on the domain in the address bar.
 
 - Full Context Encapsulation: Once a tab is bound to a proxy via its domain, every request initiated within that tab—including all background scripts, API calls, and third-party trackers—is forced through that specific tunnel.
 
