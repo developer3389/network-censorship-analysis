@@ -8,18 +8,19 @@
 We’re seeing a global surge in invasive, DPI-based censorship. Whether it's mandatory passport-based identity checks or hunting down VPNs, the censorship agency's approach is becoming a global playbook. But once the censorship agency pushes too hard, the logical move for users is to go for user-defined VPNs. And that’s where things get interesting.
 
 ## Table of Contents
-1. [Implementation Reference](#implementation-reference)
-2. [The User's Asymmetric Advantage](#the-users-asymmetric-advantage)
-3. [What about non-technical users?](#what-about-non-technical-users)
-4. [Breaking the Censor’s Workflow](#breaking-the-censors-workflow)
-5. [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
-6. [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
-7. [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
-8. [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
-9. [The Failure of L3 Routing: The Split-Tunneling Trap](#the-failure-of-l3-routing-the-split-tunneling-trap)
-10. [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
-11. [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
-12. [The Final Statement](#the-final-statement)
+- [Implementation Reference](#implementation-reference)
+- [The User's Asymmetric Advantage](#the-users-asymmetric-advantage)
+- [What about non-technical users?](#what-about-non-technical-users)
+- [Breaking the Censor’s Workflow](#breaking-the-censors-workflow)
+- [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
+- [On ISP-provided DNS and National Domain Name Systems](#on-isp-provided-dns-and-national-domain-name-systems)
+- [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
+- [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
+- [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
+- [The Failure of L3 Routing: The Split-Tunneling Trap](#the-failure-of-l3-routing-the-split-tunneling-trap)
+- [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
+- [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
+- [The Final Statement](#the-final-statement)
 
 ---
 
@@ -45,6 +46,13 @@ Detecting thousands of dynamically changing VPNs is a nightmare. As the rules bl
 Censors can’t just "hire more people" to fix this. Human cognitive capacity is a hard limit; you can't just throw more bodies at a million lines of code. If they try to automate this with AI, they’ll get buried in false positives. Businesses will start screaming when their legitimate traffic gets blocked, and AI models—trained on historical data—won't stand a chance against the creative, non-standard strategies of individual users.
 
 In the end, this user-defined VPN shift will paralyze their censorship machine. It renders their multi-million dollar DPI gear utterly incapable of performing the core function of protecting the country's digital borders, as officially declared by the system designers. This effectively turns the DPI into a pile of rusted scrap metal, useless for any kind of targeted restriction.
+
+##### On ISP-provided DNS and National Domain Name Systems
+In some countries, the government strives to implement a national domain name system. Furthermore, by law, ISPs are mandated to use the national DNS as the source for their provider-side DNS. Traditionally, it is officially claimed that this system will provide digital sovereignty and protect digital borders.
+
+Even if one accepts the statements of officials as truth, this system still grants providers the capability to block websites. In some countries, there is a practice of removing unwanted domains from the national DNS to reduce the load on DPI; as a result, for users whose phones are configured to use the provider's DNS, those devices do not make any requests, simply returning an `NXDOMAIN` error.
+
+Users can bypass this restriction by configuring custom DNS from global providers such as Google or Cloudflare, as well as by enabling `DoH` or `DoT` to hide exactly which sites the user is visiting from the ISP.
 
 #### On the Collection of VPN IP Addresses
 Yes, in some countries, censors can collect VPN IP addresses by performing curl requests to various IP-lookup services.  
