@@ -133,6 +133,11 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > Also, note that in these schemes, the connection can be initiated not only by the client within the country of censorship but also by external nodes (`VPN SERVER` or `TRANSIT VPS`), directing traffic inward.  
 > In this scenario, the `VPN CLIENT` acts as a "passive receiver," making no suspicious outgoing requests.
 
+> [!CAUTION]
+> Regardless of network topology complexity, your VPN remains vulnerable at the **L7 (Application)** layer.  
+> If you use a user-defined VPN but access national services directly via the IP addresses of your connection nodes, censors can easily identify your traffic as VPN-originated.  
+> Obfuscation at the network layer (L3) does not negate the need for caution at the application layer.
+
 Thus, by combining this architecture with custom user-defined protocols, criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
 
 #### The Failure of L3 Routing: The Split-Tunneling Trap
