@@ -138,7 +138,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > Internet access is handled **exclusively** via `IP 3`. Because this node acts as the sole gateway to the external internet in the eyes of the censor, it serves as a sacrificial point for potential IP-based blocks. While `IP 3` may eventually be blocked, this architecture ensures that `IP 2` and `IP 4` remain hidden and immune to targeted bans, maintaining the integrity of core infrastructure.
 
 > [!NOTE]
-> Blocking `IP 3` is futile. Since `IP 2` and `IP 4` are **hosted abroad**, they bypass any local IP restrictions, ensuring that the tunnel between your infrastructure nodes remains functional regardless of the censor's actions.
+> Blocking `IP 3` is futile. Since `IP 2` and `IP 4` are **hosted abroad**, they bypass any local IP restrictions, ensuring that the tunnel between infrastructure nodes remains functional regardless of the censor's actions.
 
 > [!WARNING]
 > To eliminate stream correlation, receive and transmit sockets must operate with distinct rhythms, amplitudes, and intensities.
