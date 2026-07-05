@@ -149,7 +149,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > If the user utilizes a user-defined VPN but accesses national services directly via the IP addresses of their connection nodes, censors can easily identify the traffic as VPN-originated.  
 > Obfuscation at the network layer (L3) does not negate the need for caution at the application layer.
 
-Thus, by combining this architecture with custom user-defined protocols, criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
+Thus, by combining **the Rectangular Topology** with **custom user-defined protocols**, and maintaining **proper user discipline**, criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
 
 #### The Failure of L3 Routing: The Split-Tunneling Trap
 Current split-tunneling methods, which route traffic based on network-level IP addresses or domain zones, are fundamentally flawed.
