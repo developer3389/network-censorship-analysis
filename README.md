@@ -109,7 +109,13 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
                (Socket 3)
 ```
 * *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3) and (IP 3, IP 1)` are independent.*
-* *The censor cannot correlate outgoing requests with incoming responses.*
+
+> [!NOTE]
+> External internet access can be provided by either `IP 2` or `IP 3`
+
+> [!WARNING]
+> **Traffic Correlation**: While separating transit paths increases DPI complexity, it doesn't guarantee anonymity.
+> Because traffic originates from the same client IP, a sophisticated censor **can still correlate** requests and responses via statistical analysis (packet timing and size matching).
 
 ##### Rectangular Topology:
 ```bash
@@ -121,15 +127,20 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
        |                                           |
 	   |                                           v
 [TRANSIT VPS IP 4] <------------------- [TRANSIT VPS IP 3]
-                        (Socket 3)      
+                        (Socket 3)      			\
+													 \
+											external internet IP 3
 ```
 
 * *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3)`, `(IP 3, IP 4)` and `(IP 4, IP 1)` are independent.*
 
 > [!NOTE]
+> Internet access is **exclusively** handled via `IP 3`. By isolating the exit node from other connections, we effectively break the traffic correlation chain for censorship monitoring systems.
+
+> [!WARNING]
 > To eliminate stream correlation, receive and transmit sockets must operate with distinct rhythms, amplitudes, and intensities.
 
-> [!NOTE]
+> [!TIP]
 > Also, note that in these schemes, the connection can be initiated not only by the client within the country of censorship but also by external nodes (`VPN SERVER` or `TRANSIT VPS`), directing traffic inward.  
 > In this scenario, the `VPN CLIENT` acts as a "passive receiver," making no suspicious outgoing requests.
 
