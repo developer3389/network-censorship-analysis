@@ -135,7 +135,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 * *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3)`, `(IP 3, IP 4)` and `(IP 4, IP 1)` are independent.*
 
 > [!NOTE]
-> Internet access is handled **exclusively** via `IP 3`. Since `IP 3` is never involved in any connection visible to the censor, it remains effectively invisible for blocking purposes. The censor may detect that a VPN is in use, but they cannot correlate this activity with `IP 3`, leaving it safe from targeted IP-based bans.
+> Internet access is handled **exclusively** via `IP 3`. Because this node acts as the sole gateway to the external internet in the eyes of the censor, it serves as a sacrificial point for potential IP-based blocks. While `IP 3` may eventually be blocked, this architecture ensures that `IP 2` and `IP 4` remain hidden and immune to targeted bans, maintaining the integrity of core infrastructure.
 
 > [!WARNING]
 > To eliminate stream correlation, receive and transmit sockets must operate with distinct rhythms, amplitudes, and intensities.
