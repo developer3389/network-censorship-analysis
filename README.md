@@ -100,12 +100,12 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 
 ```bash
                (Socket 1)
-[CLIENT IP 1] ----------> [VPN SERVER IP 2]
+[CLIENT IP 1] ----------> [ENTRY VPS IP 2]
                                   |
 								  | (Socket 2)
                                   |
                                   v
-[CLIENT IP 1] <---------- [TRANSIT VPS IP 3]
+[CLIENT IP 1] <---------- [LAST VPS IP 3]
                (Socket 3)
 ```
 * *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3) and (IP 3, IP 1)` are independent.*
@@ -120,13 +120,13 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 ##### Rectangular Topology:
 ```bash
                         (Socket 1)     
-[VPN CLIENT IP 1]  -------------------> [VPN SERVER IP 2]
+[VPN CLIENT IP 1]  -------------------> [ENTRY VPS IP 2]
        ^                                           |
        |                                           | 
        | (Socket 4)                                | (Socket 2)
        |                                           |
 	   |                                           v
-[TRANSIT VPS IP 4] <------------------- [TRANSIT VPS IP 3]
+[LAST VPS IP 4] <------------------- [TRANSIT VPS IP 3]
                         (Socket 3)      			\
 													 \
 											external internet IP 3
@@ -141,7 +141,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > To eliminate stream correlation, receive and transmit sockets must operate with distinct rhythms, amplitudes, and intensities.
 
 > [!TIP]
-> Also, note that in these schemes, the connection can be initiated not only by the client within the country of censorship but also by external nodes (`VPN SERVER` or `TRANSIT VPS`), directing traffic inward.  
+> Also, note that in these schemes, the connection can be initiated not only by the client within the country of censorship but also by external nodes (`ENTRY VPS`, `LAST VPS`), directing traffic inward.  
 > In this scenario, the `VPN CLIENT` acts as a "passive receiver," making no suspicious outgoing requests.
 
 > [!CAUTION]
