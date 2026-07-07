@@ -102,14 +102,14 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 
 ##### Triangular Topology:
 
-```bash
+```text
                (Socket 1)
-[CLIENT IP 1] ----------> [ENTRY VPS IP 2]
-                                  |
-								  | (Socket 2)
-                                  |
+[CLIENT IP 1] >>>>>>>>>>> [ENTRY VPS IP 2]
                                   v
-[CLIENT IP 1] <---------- [LAST VPS IP 3]
+								  v (Socket 2)
+                                  v
+                                  v
+[CLIENT IP 1] <<<<<<<<<<< [LAST VPS IP 3]
                (Socket 3)
 ```
 * *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3) and (IP 3, IP 1)` are independent.*
@@ -122,15 +122,15 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > Because traffic originates from the same client IP, a sophisticated censor **can still correlate** requests and responses via statistical analysis (packet timing and size matching).
 
 ##### Rectangular Topology:
-```bash
+```text
                         (Socket 1)     
-[VPN CLIENT IP 1]  -------------------> [ENTRY VPS IP 2]
-       ^                                           |
-       |                                           | 
-       | (Socket 4)                                | (Socket 2)
-       |                                           |
-	   |                                           v
-[LAST VPS IP 4] <------------------- [TRANSIT VPS IP 3]
+[VPN CLIENT IP 1] >>>>>>>>>>>>>>>>>>> [ENTRY VPS IP 2]
+       ^                                         v
+       ^                                         v 
+       ^ (Socket 4)                              v (Socket 2)
+       ^                                         v
+	   ^                                         v
+[LAST VPS IP 4]   <<<<<<<<<<<<<<<<<<< [TRANSIT VPS IP 3]
                         (Socket 3)      			\
 													 \
 											external internet IP 3
