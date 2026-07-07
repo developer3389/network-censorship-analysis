@@ -123,17 +123,17 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 
 ##### Rectangular Topology:
 ```text
-                        (Socket 1)     
+                      (Socket 1)     
 [VPN CLIENT IP 1] >>>>>>>>>>>>>>>>>>> [ENTRY VPS IP 2]
-       ^                                         v
-       ^                                         v 
-       ^ (Socket 4)                              v (Socket 2)
-       ^                                         v
-	   ^                                         v
-[LAST VPS IP 4]   <<<<<<<<<<<<<<<<<<< [TRANSIT VPS IP 3]
-                        (Socket 3)      			\
-													 \
-											external internet IP 3
+       ^                                       v
+       ^                                       v 
+       ^ (Socket 4)                            v (Socket 2)
+       ^                                       v
+	   ^                                       v
+[ LAST VPS IP 4 ] <<<<<<<<<<<<<<<<<<< [TRANSIT VPS IP 3]
+                      (Socket 3)      			\
+											     \
+									  external internet IP 3
 ```
 
 * *Sockets `(IP 1, IP 2)`, `(IP 2, IP 3)`, `(IP 3, IP 4)` and `(IP 4, IP 1)` are independent.*
