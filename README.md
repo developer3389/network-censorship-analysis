@@ -15,6 +15,7 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 - [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
 - [On ISP-provided DNS and National Domain Name Systems](#on-isp-provided-dns-and-national-domain-name-systems)
 - [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
+- [On Session Duration and Port Rotation](#on-session-duration-and-port-rotation)
 - [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
 - [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
 - [The Failure of L3 Routing: The Split-Tunneling Trap](#the-failure-of-l3-routing-the-split-tunneling-trap)
@@ -65,6 +66,9 @@ The core concept of this method is that smartphone applications will only detect
 
 > [!TIP]
 You can read [**our guide**](https://github.com/developer3389/vpn-gateway) how to setup vpn-gateway for entire home network.
+
+#### On Session Duration and Port Rotation
+It is important to understand that regardless of the protocol used, if a connection remains active without interruption for a long period—such as **24 hours or more**—it will likely be flagged as a VPN, leading to the server IP being blocked. To avoid this, user-defined VPNs should implement seamless session switching every few minutes or hours. The goal is to keep the duration of each `[Client IP:Port]` to `[Server IP:Port]` pair within a reasonable, natural range. To achieve this, the client must **generate a new source port and start a new session** before terminating the old one. By switching over to the new connection only after it is successfully established, the process remains entirely seamless and the user experiences no service disruption.
 
 #### Countering Active Probing: Strategies for Server Hiding
 The censor can send requests to the users' servers to check how they will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
