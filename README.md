@@ -68,7 +68,15 @@ The core concept of this method is that smartphone applications will only detect
 You can read [**our guide**](https://github.com/developer3389/vpn-gateway) how to setup vpn-gateway for entire home network.
 
 #### On Session Duration and Port Rotation
-It is important to understand that regardless of the protocol used, if a connection remains active without interruption for a long period—such as **24 hours or more**—it will likely be flagged as a VPN, leading to the server IP being blocked. To avoid this, user-defined VPNs should implement seamless session switching every few minutes or hours. The goal is to keep the duration of each `[Client IP:Port]` to `[Server IP:Port]` pair within a reasonable, natural range. To achieve this, the client must **generate a new source port and start a new session** before terminating the old one. By switching over to the new connection only after it is successfully established, the process remains entirely seamless and the user experiences no service disruption.
+Regardless of the protocol, a connection remaining active for 24 hours or more is likely to be flagged as a VPN, leading to server IP blocking. To avoid this, VPN sessions **must be rotated every few minutes or hours**. The exact interval depends on the type of traffic your VPN is masquerading as: mimicking typical web browsing requires frequent, short-lived sessions, while mimicking services like database replication allows for slightly longer, but still bounded, session durations.
+
+Implementation Strategy:
+
+- Proactive Rotation: To stay within a "natural" range for the chosen traffic type, the client must generate a new source port and establish a new session before terminating the old one.
+
+- Deterministic Server Ports: To maximize evasion, both sides can use a shared algorithm to predict the next server port at any given time, avoiding explicit command signaling inside the tunnel.
+
+- Seamless Handover: To ensure zero disruption, the client must maintain the old session until the new connection is fully established and verified. Only then should the old connection be terminated.
 
 #### Countering Active Probing: Strategies for Server Hiding
 The censor can send requests to the users' servers to check how they will behave. If the server is silent (though this is not always the worst strategy), answers like a VPN, or looks like a VPN, the censor will block the IP address of such server. In order to combat active probing, users can implement responses to censor requests in a user-defined VPN.
