@@ -68,13 +68,13 @@ The core concept of this method is that smartphone applications will only detect
 You can read [**our guide**](https://github.com/developer3389/vpn-gateway) how to setup vpn-gateway for entire home network.
 
 #### On Session Duration and Port Rotation
-Regardless of the protocol, a connection remaining active for 24 hours or more is likely to be flagged as a VPN, leading to server IP blocking. To avoid this, VPN sessions **must be rotated every few minutes or hours**. The exact interval depends on the type of traffic the VPN is masquerading as: mimicking typical web browsing requires frequent, short-lived sessions, while mimicking services like database replication allows for slightly longer, but still bounded, session durations.
+Regardless of the protocol, a connection remaining active for 24 hours or more is likely to be flagged as a VPN, leading to server IP blocking. To avoid this, VPN sessions **must be rotated every few minutes or hours**. The exact interval depends on the type of traffic the VPN is masquerading as: mimicking typical web browsing requires frequent, short-lived sessions, while mimicking processes like database replication allows for slightly longer, but still bounded, session durations.
 
 Implementation Strategy:
 
 - Proactive Rotation: To stay within a "natural" range for the chosen traffic type, the client must generate a new source port and establish a new session before terminating the old one.
 
-- Deterministic Server Ports: To maximize evasion, both the client and the server utilize a shared algorithm to predict the next server port at any given time, avoiding explicit command signaling inside the tunnel.
+- Deterministic Server Ports: To maximize stealth, both the client and the server utilize a shared algorithm to predict the next server port at any given time, avoiding explicit command signaling inside the tunnel.
 
 - Seamless Handover: To ensure zero disruption, the client must maintain the old session until the new connection is fully established and verified. Only then should the old connection be terminated.
 
