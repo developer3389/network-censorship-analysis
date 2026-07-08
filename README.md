@@ -44,7 +44,7 @@ Censors are used to a simple game: identify the most popular VPNs, fingerprint t
 Detecting thousands of dynamically changing VPNs is a nightmare. As the rules bloat to millions of lines, the probability of widespread collateral damage to legitimate services becomes a certainty. This forces censors to implement 'hacky' workarounds, turning their rule database into a massive, unmaintainable mess that systemically cripples legitimate business operations.
 
 #### The Censorship's Scaling Problem
-Censors can’t just "hire more people" to fix this. Human cognitive capacity is a hard limit; you can't just throw more bodies at a million lines of code. If they try to automate this with AI, they’ll get buried in false positives. Businesses will start screaming when their legitimate traffic gets blocked, and AI models—trained on historical data—won't stand a chance against the creative, non-standard strategies of individual users.
+Censors can’t just "hire more people" to fix this. Human cognitive capacity is a hard limit; they can't just throw more bodies at a million lines of rules. If they try to automate this with AI, they’ll get buried in false positives. Businesses will start screaming when their legitimate traffic gets blocked, and AI models—trained on historical data—won't stand a chance against the creative, non-standard strategies of individual users.
 
 In the end, this user-defined VPN shift will paralyze their censorship machine. It renders their multi-million dollar DPI gear utterly incapable of performing the core function of protecting the country's digital borders, as officially declared by the system designers. This effectively turns the DPI into a pile of rusted scrap metal, useless for any kind of targeted restriction.
 
