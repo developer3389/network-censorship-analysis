@@ -74,7 +74,7 @@ Implementation Strategy:
 
 - Proactive Rotation: To stay within a "natural" range for the chosen traffic type, the client must generate a new source port and establish a new session before terminating the old one.
 
-- Deterministic Server Ports: To maximize stealth, both the client and the server utilize a shared algorithm to predict the next server port at any given time, avoiding explicit command signaling inside the tunnel.
+- Deterministic Server Ports: To maximize stealth, both the client and the server are required to utilize a shared algorithm to predict the next server port at any given time, avoiding explicit command signaling inside the tunnel.
 
 - Seamless Handover: To ensure zero disruption, the client must maintain the old session until the new connection is fully established and verified. Only then should the old connection be terminated.
 
