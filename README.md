@@ -10,14 +10,14 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 ## Table of Contents
 - [Implementation Reference](#implementation-reference)
 - [The User's Asymmetric Advantage](#the-users-asymmetric-advantage)
-- [What about non-technical users?](#what-about-non-technical-users)
+- [How to distribute a custom protocol among trusted non-technical users](#how-to-distribute-a-custom-protocol-among-trusted-non-technical-users)
 - [Breaking the Censor’s Workflow](#breaking-the-censors-workflow)
 - [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
 - [On ISP-provided DNS and National Domain Name Systems](#on-isp-provided-dns-and-national-domain-name-systems)
 - [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
 - [On Session Duration and Port Rotation](#on-session-duration-and-port-rotation)
 - [Countering Active Probing](#countering-active-probing-strategies-for-server-hiding)
-- [Why Criminal Prosecution is a Sign of Technical Impotence](#why-criminal-prosecution-is-a-sign-of-technical-impotence)
+- [Advanced Network Topologies or Why Criminal Prosecution is a Sign of Technical Impotence](#advanced-network-topologies-or-why-criminal-prosecution-is-a-sign-of-technical-impotence)
 - [The Failure of L3 Routing: The Split-Tunneling Trap](#the-failure-of-l3-routing-the-split-tunneling-trap)
 - [Statistical Detection & Masking](#on-the-statistical-method-for-detecting-ip-addresses-of-user-defined-vpns)
 - [The Nuclear Option: White-listing](#the-nuclear-option-white-listing-and-total-isolation)
@@ -35,7 +35,7 @@ When users control the code, they own the bypass. They can tweak their own hands
 
 They can pull off the wildest stunts—like tunneling traffic inside Word docs or Excel sheets. This gives every user full control over their own traffic fingerprint. It’s safe to assume that at least 30% to 50% of the tech-savvy population will shift to these custom solutions.
 
-#### What about non-technical users?
+#### How to distribute a custom protocol among trusted non-technical users
 For those who can’t build their own tools, the solution is built on personal trust. Programmers can securely share compiled binaries directly with trusted acquaintances. By baking unique device-specific criteria—like UUIDs, Android versions, or time zones—directly into the binary, devs ensure the app only runs on the intended hardware. If a binary is leaked or handed over to a third party, it simply fails to run. Additionally, the programmer should pre-configure the binary compilation using specific compiler flags that obfuscate and minimize the binary, making reverse engineering extremely difficult.
 
 #### Breaking the Censor’s Workflow
@@ -91,7 +91,7 @@ This could be an HTTP response, text, an image, a video stream, or a stream of s
 > **Warning to Censors:**
 > Users do not need perfect protocol imitation. The sheer scale of such obfuscation will force the system to flag legitimate connections as hidden VPN tunnels. Eventually, the censor will begin blocking actual business traffic, effectively paralyzing the nation’s infrastructure.
 
-#### Why Criminal Prosecution is a Sign of Technical Impotence
+#### Advanced Network Topologies or Why Criminal Prosecution is a Sign of Technical Impotence
 Introducing criminal liability for VPN usage is not a display of power, but an admission of technical failure. If DPI (Deep Packet Inspection) systems were capable of effectively and accurately identifying VPN traffic, the state would block it automatically without resorting to social intimidation.
 
 Technically, it is impossible to prove the use of a VPN if the protocol remains **undetectable** and **specific behavioral conditions** are met.
