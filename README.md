@@ -173,8 +173,7 @@ Current split-tunneling methods, which route traffic based on network-level IP a
 
 The modern internet is global, and websites frequently load content from dozens of servers worldwide. When poorly configured tunnel settings force a site’s traffic to split between an encrypted tunnel and a direct connection at the network level (L3), it causes "split-brain" errors: the server sees the same user arriving from multiple locations simultaneously, leading to session errors and blocked access.
 
-<details>
-<summary>Click to expand: We propose a Contextual L7 Browser Routing Standard</summary>
+<details><summary>Click to expand: We propose a Contextual L7 Browser Routing Standard</summary>
 <br>
 
 The L7 Solution: Contextual Browser Routing
@@ -191,10 +190,9 @@ The core problem with current tools is the friction of constant VPN toggling. To
 | 6 | `gemini.google.com` | `gemini.google.com` | `127.0.0.1:8083` (Proxy D) |
 | 7 | `any-site.com` | `*` | `127.0.0.1:8084` (Proxy E) |
 
-
-> [!NOTE]
-> **Priority Rule:** A more specific domain mask always overrides a general one.  
-> For instance, if a user visits `gemini.google.com`, the browser will prioritize the explicit `gemini.google.com` rule (Proxy D) over the broader `*.google.com` rule (Proxy C).
+**NOTE:**  
+**Priority Rule:** A more specific domain mask always overrides a general one.  
+For instance, if a user visits `gemini.google.com`, the browser will prioritize the explicit `gemini.google.com` rule (`Proxy D`) over the broader `*.google.com` rule (`Proxy C`).
 
 **This is our core vision**: users define traffic routing through domain masks, applying a hierarchical logic where precision dictates the path. By mapping specific masks to proxy instances, we transform browser architecture from a "global-on/off" model to a granular, context-aware routing system:
 
