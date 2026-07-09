@@ -155,7 +155,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 > Blocking `IP 3` is futile. Since `IP 2` and `IP 4` are **hosted abroad**, they bypass any local IP restrictions, ensuring that the tunnel between infrastructure nodes remains functional regardless of the censor's actions.
 
 > [!WARNING]
-> To eliminate stream correlation, the inbound `([LAST VPS IP 4] -> [CLIENT IP 1])` and outbound `([CLIENT IP 1] -> [ENTRY VPS IP 2])` streams must be decorrelated through randomized, non-mirrored rhythms, amplitudes, and intensities.
+> To eliminate stream correlation, the outbound `([CLIENT IP 1] -> [ENTRY VPS IP 2])` and inbound `([LAST VPS IP 4] -> [CLIENT IP 1])` streams must be decorrelated through randomized, non-mirrored rhythms, amplitudes, and intensities.
 
 > [!TIP]
 > Also, note that in these schemes, the connection can be initiated not only by the client within the country of censorship but also by external nodes (`ENTRY VPS`, `LAST VPS`), directing traffic inward.  
