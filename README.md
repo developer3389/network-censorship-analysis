@@ -62,7 +62,7 @@ Standard practices currently used in those regions do not provide users with ade
 However, there is a robust, fail-safe method:
 `[Client in censorship country] -> [VPS1 (Abroad)] -> [VPS2 (Abroad)]`  
 
-The core concept of this method is that smartphone applications will only detect the IP address of VPS2. Even if the censor identifies and blocks VPS2, the connection to the foreign network is maintained via the IP address of VPS1. The censor cannot see or block VPS1, provided that the VPN gateway resides on a device or virtual machine that is dedicated exclusively to this task and used for nothing else.
+The core concept of this method is that smartphone applications will only detect the IP address of `VPS2`. Even if the censor identifies and blocks `VPS2`, the connection to the foreign network is maintained via the IP address of `VPS1`. The censor cannot see or block `VPS1`, provided that the VPN gateway resides on a device or virtual machine that is dedicated exclusively to this task and used for nothing else.
 
 > [!TIP]
 You can read [**our guide**](https://github.com/developer3389/vpn-gateway) how to setup vpn-gateway for entire home network.
