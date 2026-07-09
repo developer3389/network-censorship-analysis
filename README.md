@@ -174,7 +174,7 @@ Current split-tunneling methods, which route traffic based on network-level IP a
 The modern internet is global, and websites frequently load content from dozens of servers worldwide. When poorly configured tunnel settings force a site’s traffic to split between an encrypted tunnel and a direct connection at the network level (L3), it causes "split-brain" errors: the server sees the same user arriving from multiple locations simultaneously, leading to session errors and blocked access.
 
 <details>
-<summary>Click to expand: We propose a new standard for browser architecture - Contextual L7 Browser Routing Standard</summary>
+<summary>Click to expand: We propose a Contextual L7 Browser Routing Standard</summary>
 <br>
 
 The L7 Solution: Contextual Browser Routing
