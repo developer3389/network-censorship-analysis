@@ -161,7 +161,7 @@ To bypass DPI, users can reconfigure their VPN into a "triangular" or "rectangul
 
 > [!CAUTION]
 > Regardless of network topology complexity, the user's VPN **remains vulnerable at the L7 (Application) layer.**  
-> If the user utilizes a user-defined VPN but accesses national services directly via the IP addresses of their connection nodes, censors can easily identify the traffic as VPN-originated. Since the geolocation of the node rarely matches the user's presence, such patterns provide clear grounds for detection and subsequent legal scrutiny.
+> If the user utilizes a user-defined VPN but accesses national services directly via the IP addresses of their connection nodes, censors can easily identify the traffic as VPN-originated. Since the geolocation of the node rarely matches the user's presence, such patterns provide clear grounds for detection and subsequent legal scrutiny.  
 > Obfuscation at the network layer (L3) does not negate the need for caution at the application layer.
 
 Thus, by combining **the Rectangular Topology** with **custom user-defined protocols**, and maintaining **proper user discipline—including the strict avoidance of national services**—criminal prosecution for VPN usage becomes highly unlikely, as the traffic becomes indistinguishable from legitimate background activity.
