@@ -173,7 +173,9 @@ Current split-tunneling methods, which route traffic based on network-level IP a
 
 The modern internet is global, and websites frequently load content from dozens of servers worldwide. When poorly configured tunnel settings force a site’s traffic to split between an encrypted tunnel and a direct connection at the network level (L3), it causes "split-brain" errors: the server sees the same user arriving from multiple locations simultaneously, leading to session errors and blocked access.
 
-**We propose a new standard for browser architecture:**
+<details>
+<summary>Click to expand: We propose a new standard for browser architecture - Contextual L7 Browser Routing Standard</summary>
+<br>
 
 The L7 Solution: Contextual Browser Routing
 The core problem with current tools is the friction of constant VPN toggling. To restore a seamless experience, we must shift traffic management to the application layer (L7) by binding browser tab contexts to specific proxy-based tunnels.
@@ -205,6 +207,8 @@ The core problem with current tools is the friction of constant VPN toggling. To
 - Isolation: Because the tunnel is bound to the tab’s context, site data never leaks outside the designated path, ensuring a consistent digital presence without the errors caused by fragmented routing.
 
 As internet censorship spreads, managing traffic with this level of surgical precision is the only way to keep the web accessible and stable, while reclaiming the comfort of a truly global internet.
+
+</details>
 
 #### On the statistical method for detecting IP addresses of user-defined VPNs
 Yes, in certain countries, censors will likely shift to a policy of statistical analysis upon the widespread adoption of "user-defined VPN" methods. They will collect the frequency of requests to various IP addresses originating from a single sender's IP. Since the VPN IP address would be the most frequent in the statistics, that IP will be subject to blocking.
