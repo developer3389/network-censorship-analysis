@@ -94,7 +94,9 @@ This could be an HTTP response, text, an image, a video stream, or a stream of s
 #### Why Criminal Prosecution is a Sign of Technical Impotence
 Introducing criminal liability for VPN usage is not a display of power, but an admission of technical failure. If DPI (Deep Packet Inspection) systems were capable of effectively and accurately identifying VPN traffic, the state would block it automatically without resorting to social intimidation.
 
-Technically, it is impossible to prove the use of a VPN if the protocol itself cannot be detected. Let us consider the examples.
+Technically, it is impossible to prove the use of a VPN if the protocol remains **undetectable** and **specific behavioral conditions** are met.
+  
+Let us consider the examples.
 
 Traditional VPNs are easily detectable targets due to their predictable symmetry: a single socket, a fixed pair of IP addresses, and a mirrored data stream:
 
