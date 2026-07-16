@@ -89,7 +89,7 @@ This could be an HTTP response, text, an image, a video stream, or a stream of s
 
 > [!WARNING]
 > **Warning to Censors:**
-> Users do not need perfect protocol imitation. The sheer scale of such obfuscation will force the system to flag legitimate connections as hidden VPN tunnels. Eventually, the censor will begin blocking actual business traffic, effectively paralyzing the nation’s infrastructure.
+> Users do not need perfect protocol imitation. The very attempts at such obfuscation on a significant scale will force the system to flag legitimate connections as hidden VPN tunnels. Eventually, the censor will begin blocking actual business traffic, effectively paralyzing the nation’s infrastructure.
 
 #### Advanced Network Topologies or Why Criminal Prosecution is a Sign of Technical Impotence
 Introducing criminal liability for VPN usage is not a display of power, but an admission of technical failure. If DPI (Deep Packet Inspection) systems were capable of effectively and accurately identifying VPN traffic, the state would block it automatically without resorting to social intimidation.
