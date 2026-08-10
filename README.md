@@ -36,6 +36,8 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 > Users should approach encryption with extreme caution, as errors in cryptography implementation or key management can completely compromise the confidentiality of their traffic.  
 > We strongly recommend thoroughly **reviewing written code using modern AI agents** before deploying a user-defined VPN in a hostile (or adverse) environment.
 
+---
+
 #### The User's Asymmetric Advantage
 When users control the code, they own the bypass. They can tweak their own handshakes, inject custom jitter, or even program specific traffic patterns on the fly. Unlike commercial VPNs that have to play by network rules, individual users have zero constraints.
 
