@@ -9,6 +9,7 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 
 ## Table of Contents
 - [Implementation Reference](#implementation-reference)
+- [Important Note on Encryption](#important-note-on-encryption)
 - [The User's Asymmetric Advantage](#the-users-asymmetric-advantage)
 - [Distributing custom protocols among trusted users](#distributing-custom-protocols-among-trusted-users)
 - [Breaking the Censor’s Workflow](#breaking-the-censors-workflow)
@@ -30,8 +31,8 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 > The theory is backed by a minimalist approach.  
 > You can explore the practical implementation here: [simplest-vpn: 200-line skeleton](https://github.com/developer3389/simplest-vpn)
 
+#### Important Note on Encryption:
 > [!CAUTION]
-> **Important Note on Encryption:**  
 > Users should approach encryption with extreme caution, as errors in cryptography implementation or key management can completely compromise the confidentiality of their traffic.  
 > We strongly recommend thoroughly **reviewing written code using modern AI agents** before deploying a user-defined VPN in a hostile (or adverse) environment.
 
