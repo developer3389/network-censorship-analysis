@@ -34,7 +34,7 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 #### Important Note on Encryption:
 > [!CAUTION]
 > Users should approach encryption with extreme caution, as errors in cryptography implementation or key management can completely compromise the confidentiality of their traffic.  
-> We strongly recommend thoroughly **reviewing written code using modern AI agents** before deploying a user-defined VPN in a hostile (or adverse) environment.
+> We strongly recommend thoroughly **reviewing written code using modern AI agents** before deploying a user-defined VPN in a hostile environment.
 
 ---
 
