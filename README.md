@@ -39,9 +39,8 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 ---
 
 #### The User's Asymmetric Advantage
-When users control the code, they own the bypass. They can tweak their own handshakes, inject custom jitter, or even program specific traffic patterns on the fly. Unlike commercial VPNs that have to play by network rules, individual users have zero constraints.
-
-They can pull off the wildest stunts—like tunneling traffic inside Word docs or Excel sheets. This gives every user full control over their own traffic fingerprint. It’s safe to assume that at least 30% to 50% of the tech-savvy population will shift to these custom solutions.
+When users control the code, they own the bypass. They can tweak their own handshakes, inject custom jitter, or even program specific traffic patterns on the fly. Unlike commercial VPNs that have to play by network rules, individual users have zero constraints.  
+They can pull off the wildest stunts—like tunneling traffic inside Word docs or Excel sheets. This gives every user full control over their own traffic fingerprint. It's safe to assume that this concept holds great potential.
 
 #### Distributing custom protocols among trusted users
 For those who can’t build their own tools, the solution is built on personal trust. Programmers can securely share compiled binaries directly with trusted acquaintances. By baking unique device-specific criteria—like UUIDs, Android versions, or time zones—directly into the binary, devs ensure the app only runs on the intended hardware. If a binary is leaked or handed over to a third party, it simply fails to run. Additionally, the programmer should pre-configure the binary compilation using specific compiler flags that obfuscate and minimize the binary, making reverse engineering extremely difficult.
