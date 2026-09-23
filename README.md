@@ -53,7 +53,7 @@ Detecting thousands of dynamically changing VPNs is a nightmare. As the rules bl
 #### Why Censorship Fails to Scale
 Censors can’t just 'hire more people' to handle the large volume of user-defined VPN protocols. Human cognitive capacity is a hard limit; they can't just throw more bodies at a million lines of rules. If they try to automate this with AI, they’ll get buried in false positives. Businesses will start screaming when their legitimate traffic gets blocked, and AI models—trained on historical data—won't stand a chance against the creative, non-standard strategies of individual users.
 
-In the end, a mass shift toward user-defined protocols will paralyze their censorship machine. It renders their multi-million dollar DPI gear utterly incapable of performing the core function of protecting the country's digital borders, as officially declared by the system designers. This effectively turns the DPI into a pile of rusted scrap metal, useless for any kind of targeted restriction.
+In the end, a mass shift toward user-defined protocols will paralyze their censorship machine. It renders their multi-million dollar DPI gear utterly incapable of performing the core function of protecting the country's digital borders. This effectively turns the DPI into a pile of rusted scrap metal, useless for any kind of targeted restriction.
 
 ##### On ISP-provided DNS and National Domain Name Systems
 In some countries, the government strives to implement a national domain name system. Furthermore, by law, ISPs are mandated to use the national DNS as the source for their provider-side DNS. Traditionally, it is officially claimed that this system will provide digital sovereignty and protect digital borders.
