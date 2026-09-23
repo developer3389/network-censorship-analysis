@@ -13,7 +13,7 @@ We’re seeing a global surge in invasive, DPI-based censorship. Whether it's ma
 - [The User's Asymmetric Advantage](#the-users-asymmetric-advantage)
 - [Distributing custom protocols among trusted users](#distributing-custom-protocols-among-trusted-users)
 - [Breaking the Censor’s Workflow](#breaking-the-censors-workflow)
-- [The Censorship's Scaling Problem](#the-censorships-scaling-problem)
+- [Why Censorship Fails to Scale](#why-censorship-fails-to-scale)
 - [On ISP-provided DNS and National Domain Name Systems](#on-isp-provided-dns-and-national-domain-name-systems)
 - [On the Collection of VPN IP Addresses](#on-the-collection-of-vpn-ip-addresses)
 - [On Session Duration and Port Rotation](#on-session-duration-and-port-rotation)
@@ -50,17 +50,18 @@ Censors are used to a simple game: identify the most popular VPNs, fingerprint t
 
 Detecting thousands of dynamically changing VPNs is a nightmare. As the rules bloat to millions of lines, the probability of widespread collateral damage to legitimate services becomes a certainty. This forces censors to implement 'hacky' workarounds, turning their rule database into a massive, unmaintainable mess that systemically cripples legitimate business operations.
 
-#### The Censorship's Scaling Problem
-Censors can’t just "hire more people" to fix this. Human cognitive capacity is a hard limit; they can't just throw more bodies at a million lines of rules. If they try to automate this with AI, they’ll get buried in false positives. Businesses will start screaming when their legitimate traffic gets blocked, and AI models—trained on historical data—won't stand a chance against the creative, non-standard strategies of individual users.
+#### Why Censorship Fails to Scale
+Censors can’t just "hire more people" to solve this scaling problem. Human cognitive capacity is a hard limit; they can't just throw more bodies at a million lines of rules. If they try to automate this with AI, they’ll get buried in false positives. Businesses will start screaming when their legitimate traffic gets blocked, and AI models—trained on historical data—won't stand a chance against the creative, non-standard strategies of individual users.
 
-In the end, this user-defined VPN shift will paralyze their censorship machine. It renders their multi-million dollar DPI gear utterly incapable of performing the core function of protecting the country's digital borders, as officially declared by the system designers. This effectively turns the DPI into a pile of rusted scrap metal, useless for any kind of targeted restriction.
+In the end, a mass shift toward user-defined protocols will paralyze their censorship machine. It renders their multi-million dollar DPI gear utterly incapable of performing the core function of protecting the country's digital borders, as officially declared by the system designers. This effectively turns the DPI into a pile of rusted scrap metal, useless for any kind of targeted restriction.
 
 ##### On ISP-provided DNS and National Domain Name Systems
 In some countries, the government strives to implement a national domain name system. Furthermore, by law, ISPs are mandated to use the national DNS as the source for their provider-side DNS. Traditionally, it is officially claimed that this system will provide digital sovereignty and protect digital borders.
 
 Even if one accepts the statements of officials as truth, this system still grants providers the capability to block websites. In some countries, there is a practice of removing unwanted domains from the national DNS to reduce the load on DPI; as a result, for users whose phones are configured to use the provider's DNS, those devices do not make any requests, simply returning an `NXDOMAIN` error.
 
-Users can bypass this restriction by configuring custom DNS from global providers such as Google or Cloudflare, as well as by enabling `DoH` or `DoT` to hide exactly which sites the user is visiting from the ISP.
+Users can bypass this restriction by configuring custom DNS from global providers such as Google or Cloudflare, as well as by enabling `DoH` or `DoT` to hide exactly which sites the user is visiting from the ISP.  
+Naturally, the DNS request traffic **must be routed** through a tunnel.
 
 #### On the Collection of VPN IP Addresses
 Yes, in some countries, censors can collect VPN IP addresses by performing curl requests to various IP-lookup services.  
@@ -268,7 +269,7 @@ A censor may attempt to cut off the global internet and transition the country t
 If a regime reaches the point of implementing a nationwide whitelist, citizens should simply grab some popcorn. When a country becomes so intellectually and technologically bankrupt that it chooses complete digital isolation, it has already sealed its own fate. The ensuing systemic collapse will be entirely self-inflicted, driven by the regime’s own incompetence.
 
 #### The Final Statement
-It is logical to conclude that when the cost of bypassing a nation’s digital defenses is reduced to a mere 200 lines of Go code, and users have the ability to transform their thoughts into code via AI, the verdict is clear: the current censorship infrastructure is obsolete.  
+It is logical to conclude that when the cost of bypassing a nation’s digital defenses is reduced to a mere 200 lines of Go code, and users have the ability to transform their thoughts into code via AI agents, the verdict is clear: the current censorship infrastructure is obsolete.  
 To the censors: your efforts are futile. The only recommendation that will actually assist you in preventing further damage to the national infrastructure is to resign from this unsustainable and unproductive line of work. A thriving and advanced digital economy requires one essential condition: unrestricted information exchange with the entire world.
 
 ## Let's Reclaim Internet Freedom!
